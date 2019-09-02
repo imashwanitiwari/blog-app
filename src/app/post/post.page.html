@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Post Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h2 [innerHTML]="post && post.title"></h2>
+  <div [innerHTML]="post && post.body"></div>
+
+  <p *ngIf="user && user.name"> Contributor Name: {{user && user.name}}</p>
+  <p *ngIf="user && user.company && user.company.name"> Company Name: {{user.company.name}}</p>
+</ion-content>

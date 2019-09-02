@@ -1,14 +1,18 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Posts
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-virtual-scroll [items]="posts" approxItemHeight="320px">
+    <ion-card *virtualItem="let item;">
+      <ion-card-header routerLink="/post/{{item.id}}" routerDirection="root">
+        <ion-card-title>{{ item.title }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>{{ item.body }}</ion-card-content>
+    </ion-card>
+  </ion-virtual-scroll>
 </ion-content>

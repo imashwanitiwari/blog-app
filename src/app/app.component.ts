@@ -4,19 +4,27 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+import { HttpClient } from '@angular/common/http';
+import { ConstantsService } from './constants.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    constants: ConstantsService, http: HttpClient
   ) {
     this.initializeApp();
+
   }
+
 
   initializeApp() {
     this.platform.ready().then(() => {

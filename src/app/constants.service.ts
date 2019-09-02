@@ -9,7 +9,7 @@ export class ConstantsService {
 
   constructor() { }
 
-  getUrl() {
-    return '' + this.url;
+  public getUrl() {
+    return this.url;
   }
 }

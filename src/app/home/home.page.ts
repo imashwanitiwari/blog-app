@@ -8,11 +8,9 @@ import { ConstantsService } from '../constants.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  title: string;
   posts: any[];
   constructor(constants: ConstantsService, http: HttpClient) {
-
-    http.get<any>('https://jsonplaceholder.typicode.com/' + 'posts')
+    http.get<any>(constants.getUrl() + 'posts')
       .subscribe(response => {
         let data = response;
         this.posts = data;

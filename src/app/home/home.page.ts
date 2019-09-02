@@ -14,7 +14,6 @@ export class HomePage {
       .subscribe(response => {
         let data = response;
         this.posts = data;
-        console.log(data);
       });
   }
 

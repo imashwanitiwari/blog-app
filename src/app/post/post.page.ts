@@ -19,7 +19,6 @@ export class PostPage implements OnInit {
     this.route.paramMap.subscribe(
       (params) => {
         let postId = params.get('postId');
-        console.log();
         this.getPostDetails(postId)
       }
     );
@@ -30,7 +29,6 @@ export class PostPage implements OnInit {
       .subscribe(response => {
         this.post = response;
         this.getUserDetails(this.post.userId)
-        console.log(this.post);
       });
   };
 
@@ -38,7 +36,6 @@ export class PostPage implements OnInit {
     this.http.get<any>(this.constants.getUrl() + 'users/' + userId)
       .subscribe(response => {
         this.user = response;
-        console.log(this.user);
       });
   }
 }
